@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Giovanne Agblevor — Frontend Developer & UI/UX Developer. Building high-performance, modern web interfaces and user-centered designs.">
+  <title>Giovanne Agblevor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/fav.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <!-- Background Glow FX -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo" id="logoLink">
+        <span class="logo-light">giov</span><span class="logo-accent">anne</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-outline nav-cta">Hire Me</a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
+          <svg class="theme-toggle-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="theme-toggle-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Mobile navigation">
+    <ul class="mobile-list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="btn btn-primary">Hire Me</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            Available for Freelance
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Giovanne Agblevor</span>
+          </h1>
+          <p class="hero-role">Frontend Developer & UI/UX Developer</p>
+          <p class="hero-subtitle">
+            I design and build premium digital experiences. Specializing in crafting clean layouts, responsive frontend architecture, and custom interfaces.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Let's Connect</a>
+            <button type="button" class="btn cv-download-btn" id="cvDownloadBtn" aria-label="Download Giovanne Agblevor's CV">
+              <svg class="cv-download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </button>
+          </div>
+          <div class="hero-socials">
+            <a href="mailto:agblevorgiovanne02@gmail.com" class="social-icon-link" aria-label="Email Address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image-container reveal">
+          <div class="hero-image-wrapper">
+            <img src="/WhatsApp Image 2026-04-04 at 1.03.15 AM.jpeg" alt="Giovanne Agblevor profile photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <span class="eyebrow">About Me</span>
+          <h2 class="section-title">I build polished digital products with clarity, speed, and usability.</h2>
+          <p class="section-subtitle">
+            I specialize in frontend architecture, accessible UI, and responsive interactions that help brands stand out online.
+          </p>
+          <div class="stats-card">
+            <div class="stat-item">
+              <h3>1+</h3>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+              <h3>30+</h3>
+              <p>Projects Delivered</p>
+            </div>
+            <div class="stat-item">
+              <h3>10</h3>
+              <p>UI/UX Case Studies</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image reveal">
+          <div class="hero-image-wrapper">
+            <img src="/me.jpeg" alt="Giovanne Agblevor profile photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section bg-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Skills</span>
+          <h2 class="section-title">Technical expertise and professional toolkit.</h2>
+          <p class="section-subtitle">
+            A refined set of frontend, design, and engineering skills built through real-world production work.
+          </p>
+        </div>
+        <div class="skills-professional">
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title">Frontend Development</h3>
+            <div class="skills-grid-professional">
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">HTML5</span>
+                    <span class="skill-meta-professional">Semantic markup</span>
+                  </div>
+                  <span class="skill-percent-professional">95%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="95"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">CSS3</span>
+                    <span class="skill-meta-professional">Layouts, animations</span>
+                  </div>
+                  <span class="skill-percent-professional">93%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="93"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M16 8v8M12 8v8M8 8v8"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">JavaScript</span>
+                    <span class="skill-meta-professional">ES6+, DOM, async</span>
+                  </div>
+                  <span class="skill-percent-professional">90%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="90"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Responsive Design</span>
+                    <span class="skill-meta-professional">Mobile-first</span>
+                  </div>
+                  <span class="skill-percent-professional">92%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="92"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Tailwind CSS</span>
+                    <span class="skill-meta-professional">Utility-first</span>
+                  </div>
+                  <span class="skill-percent-professional">88%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="88"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Bootstrap</span>
+                    <span class="skill-meta-professional">Rapid prototyping</span>
+                  </div>
+                  <span class="skill-percent-professional">85%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="85"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title">UI/UX Design</h3>
+            <div class="skills-grid-professional">
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Figma</span>
+                    <span class="skill-meta-professional">Design & prototyping</span>
+                  </div>
+                  <span class="skill-percent-professional">94%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="94"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Wireframing</span>
+                    <span class="skill-meta-professional">Low-fidelity flows</span>
+                  </div>
+                  <span class="skill-percent-professional">90%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="90"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Prototyping</span>
+                    <span class="skill-meta-professional">Interactive mockups</span>
+                  </div>
+                  <span class="skill-percent-professional">91%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="91"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Design Systems</span>
+                    <span class="skill-meta-professional">Tokens, components</span>
+                  </div>
+                  <span class="skill-percent-professional">89%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="89"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="skills-category reveal">
+            <h3 class="skills-category-title">Tools & Technologies</h3>
+            <div class="skills-grid-professional">
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7M6 9v9"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Git</span>
+                    <span class="skill-meta-professional">Version control</span>
+                  </div>
+                  <span class="skill-percent-professional">92%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="92"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-3.99-1.425-.135-.345-.72-1.425-1.23-1.71-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">GitHub</span>
+                    <span class="skill-meta-professional">Repos, CI/CD</span>
+                  </div>
+                  <span class="skill-percent-professional">93%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="93"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">VS Code</span>
+                    <span class="skill-meta-professional">Editor & extensions</span>
+                  </div>
+                  <span class="skill-percent-professional">95%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="95"></div></div>
+              </div>
+              <div class="skill-item-professional reveal">
+                <div class="skill-item-header">
+                  <div class="skill-icon-professional">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  </div>
+                  <div class="skill-info-professional">
+                    <span class="skill-name-professional">Chrome DevTools</span>
+                    <span class="skill-meta-professional">Debugging & audit</span>
+                  </div>
+                  <span class="skill-percent-professional">88%</span>
+                </div>
+                <div class="skill-level-professional"><div class="skill-fill-professional" data-width="88"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Projects</span>
+          <h2 class="section-title">Selected work and live demos.</h2>
+          <p class="section-subtitle">
+            Explore projects built with modern web technologies, UI/UX systems, and responsive interactions.
+          </p>
+        </div>
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="ui">UI/UX</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+        <div class="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section bg-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Contact</span>
+          <h2 class="section-title">Let's build something great together.</h2>
+          <p class="section-subtitle">
+            Reach out for freelance partnerships, full-time opportunities, or project collaborations.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <p class="contact-text">
+              I’m available for new frontend and UI/UX challenges. Send a message and I’ll reply within one business day.
+            </p>
+            <div class="contact-links">
+              <a href="mailto:agblevorgiovanne02@gmail.com" class="contact-link">
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                agblevorgiovanne02@gmail.com
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </span>
+                LinkedIn Profile
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </span>
+                GitHub Profile
+              </a>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form" action="" method="POST">
+            <div class="section-title">Send a message</div>
+            <div class="section-subtitle">Let's talk about your next project and how I can help.</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Name</label>
+                <input id="contactName" type="text" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email</label>
+                <input id="contactEmail" type="email" placeholder="Your email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="6" placeholder="Your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <button class="admin-fab" id="adminFab" aria-label="Open admin panel"><span class="fab-icon">⚡</span></button>
+
+    <div class="admin-modal" id="adminModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+
+        <div class="modal-screen" id="authScreen">
+          <h2 class="modal-title">Admin Access</h2>
+          <p class="modal-subtitle">Enter the admin key to manage projects.</p>
+          <div class="form-group">
+            <label for="decryptKey">Admin Key</label>
+            <input id="decryptKey" type="password" placeholder="Enter key..." autocomplete="off">
+          </div>
+          <button id="submitKeyBtn" class="btn btn-primary btn-full">Unlock Panel</button>
+        </div>
+
+        <div class="modal-screen hide" id="uploadScreen">
+          <h2 class="modal-title">Upload Project</h2>
+          <p class="modal-subtitle">Add a new project to your portfolio.</p>
+          <form id="projectUploadForm">
+            <div class="form-group">
+              <label for="projTitle">Project Title *</label>
+              <input id="projTitle" type="text" placeholder="e.g. E-Commerce Dashboard" required>
+            </div>
+            <div class="form-group">
+              <label for="projDesc">Description *</label>
+              <textarea id="projDesc" rows="3" placeholder="Short project description..." required></textarea>
+            </div>
+            <div class="upload-two-col">
+              <div class="form-group">
+                <label for="projCategory">Category</label>
+                <select id="projCategory" class="modal-select">
+                  <option value="web">Web</option>
+                  <option value="ui">UI/UX</option>
+                  <option value="design">Design</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="projTags">Tags *</label>
+                <input id="projTags" type="text" placeholder="React, Figma, CSS" required>
+                <p class="form-hint">Comma-separated</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="projLink">Live Link (optional)</label>
+              <input id="projLink" type="url" placeholder="https://...">
+            </div>
+            <div class="form-group">
+              <label>Project Image *</label>
+              <div class="img-source-tabs">
+                <button type="button" class="img-tab active" id="tabFile">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  Upload File
+                </button>
+                <button type="button" class="img-tab" id="tabUrl">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Image URL
+                </button>
+              </div>
+              <div class="img-panel" id="panelFile">
+                <div class="drop-zone" id="dropZone">
+                  <div class="drop-zone-inner">
+                    <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    <span class="drop-label">Click or drag image here</span>
+                    <span class="drop-hint">PNG, JPG, WEBP up to 10 MB</span>
+                  </div>
+                  <input type="file" id="projImage" accept="image/*" class="visually-hidden">
+                </div>
+                <div class="file-chosen-preview hide" id="fileChosenPreview">
+                  <img id="fileThumb" src="" alt="Preview">
+                  <div class="file-chosen-info">
+                    <span class="file-name-label" id="fileNameLabel">No file chosen</span>
+                    <button type="button" class="remove-img-btn" id="removeFileBtn">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <div class="img-panel hide" id="panelUrl">
+                <div class="url-input-wrapper">
+                  <svg class="url-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  <input type="url" id="projImageUrl" placeholder="Paste direct image URL...">
+                </div>
+                <div class="file-chosen-preview hide" id="urlPreviewContainer">
+                  <img id="urlThumb" src="" alt="Preview">
+                  <div class="file-chosen-info">
+                    <span class="file-name-label">URL Image Loaded</span>
+                    <button type="button" class="remove-img-btn" id="removeUrlBtn">Remove</button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline btn-full" id="loadUrlBtn" style="margin-top:0.75rem">Load & Preview Image</button>
+              </div>
+            </div>
+            <div class="upload-actions">
+              <button type="button" class="btn btn-outline" id="previewProjBtn">Preview</button>
+              <button type="submit" class="btn btn-primary">Save to Portfolio</button>
+            </div>
+            <div class="live-preview-container hide" id="livePreviewContainer">
+              <p class="preview-heading">Live Preview</p>
+              <div id="previewCardSlot"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">&copy; <span id="year"></span> Giovanne Agblevor. All rights reserved.</p>
+      <p class="credits">Built with HTML, CSS, JavaScript, and Firebase.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <div class="preview-modal" id="previewModal">
+    <button class="preview-close" id="previewClose" aria-label="Close preview">&times;</button>
+    <div class="preview-body">
+      <iframe id="previewIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <img id="previewImage" src="" alt="Project preview">
+    </div>
+    <div class="preview-fallback" id="previewFallback">
+      <p>This site can't be embedded. Open it in a new tab instead.</p>
+      <a href="#" id="previewFallbackLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Project</a>
+    </div>
+  </div>
+</body>
+</html>
